@@ -1,0 +1,13 @@
+# You can use https://crontab.guru for help :)
+
+- name: slack_employees_review_reminder
+  class: Scheduled::SlackEmployeesReviewReminder
+  cron: '0 0 * * 0'
+
+- name: slack_applicants_today_check
+  class: Scheduled::SlackApplicantsTodayCheck
+  cron: '0 0 * * 0'
+
+- name: slack_get_user_list
+  class: Scheduled::SlackGetUsersList
+  cron: '0 */2 * * *'
