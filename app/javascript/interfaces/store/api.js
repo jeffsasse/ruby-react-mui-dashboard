@@ -22,9 +22,10 @@ APIService.login = async (request) => {
     }
 }
 
-APIService.getUsers = async (params) => {
+APIService.getUsers = async (request) => {
     try {
-        const response = await api.get(config.apis.users)
+        const params = `?page=${request?.page || 1}&per_page=${request?.per_page || 10}`
+        const response = await api.get(config.apis.users + params)
         return response.data
     } catch (error) {
         return error
